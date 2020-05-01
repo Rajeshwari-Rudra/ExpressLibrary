@@ -16,7 +16,10 @@ app.use(helmet());
 dotenv.config({ path: '.env' })
 const mongoose = require('mongoose');
 
-const dev_db_url = process.env.ATLAS_URI
+
+// Set up mongoose connection
+var mongoose = require('mongoose');
+var dev_db_url = 'mongodb+srv://rajeshwari:mynewpassword@cluster0-mbdj7.mongodb.net/local_library?retryWrites=true'
 const mongoDB = process.env.MONGODB_URI || dev_db_url;
 mongoose.connect(mongoDB, { useNewUrlParser: true });
 mongoose.Promise = global.Promise;
